@@ -1,3 +1,5 @@
+package Aufgabe_I;
+
 import java.util.Scanner;
 
 public class RFaktor2 {

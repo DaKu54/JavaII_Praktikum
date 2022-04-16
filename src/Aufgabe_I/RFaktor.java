@@ -1,3 +1,5 @@
+package Aufgabe_I;
+
 public class RFaktor {
     public static void main(String[] args) {
         double infected = 100;
