@@ -5,12 +5,17 @@ import java.util.Scanner;
 public class Wordle {
 
     public static void main(String[] args) {
+
+        //Lösung als lokale Variable
         String word = "TASSE";
         int guessCount = 6;
+
+        //Zum Einlesen der Eingaben
         Scanner scan = new Scanner(System.in);
 
         String msg = String.format("Guess the secret word! You have %s guesses", guessCount);
         System.out.println(msg);
+
 
         while(guessCount > 0) {
             String current = scan.nextLine();
