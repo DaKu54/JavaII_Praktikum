@@ -2,27 +2,62 @@ package Aufgabe_II;
 
 public class Card {
 
-    public static String name;
+    public static String Name;
     public static int baseAttack;
     public static int baseDefense;
     public static int health;
     public static Buff buff;
+    public static Category kategorie;
 
-    public Card(String name, int baseAttack, int baseDefense, int health, Buff buff){
-        if(name == null || name == "")
-        {
-            throw new IllegalArgumentException("name darf nicht null oder leer sein");
-        } else if (baseAttack < 0 )
-        {
-            throw new IllegalArgumentException("baseAttack muss mindestens 0 sein");
-        } else if (baseDefense < 0 )
-        {
-            throw new IllegalArgumentException("baseDefense muss mindestens 0 sein");
+    /**
+     * Konstruktor baut neue Card - inkl. check
+     *
+     * @param Name
+     * @param baseDefense
+     * @param baseAttack
+     * @param kategorie
+     * @param health
+     */
+    public Card(String Name, int baseDefense, int baseAttack, Category kategorie, int health) {
+        if (Name == null) {
+            throw new IllegalArgumentException("Es muss ein gültiger Name vergeben werden!");
         }
+        else if (Name.isEmpty()) {
+            throw new IllegalArgumentException("Es muss ein gültiger Name vergeben werden!");
+        }
+        else {
+            this.Name=Name;
+        }
+        if (baseAttack < 0) {
+            throw new IllegalArgumentException("Der Wert muss mindestens 0 sein!");
+        }
+        else {
+            this.baseAttack=baseAttack;
+        }
+        if (baseDefense < 0) {
+            throw new IllegalArgumentException("Der Wert muss mindestens 0 sein!");
+        }
+        else {
+            this.baseDefense=baseDefense;
+        }
+        if (health <= 0) {
+            throw new IllegalArgumentException("Der Wert muss mindestens 0 sein!");
+        }
+        else {
+            this.health=health;
+        }
+        if (kategorie == null) {
+            throw new IllegalArgumentException("Kategorie darf nicht null sein!");
+        }
+        else {
+            this.kategorie=kategorie;
+        }
+
+        this.buff=null;
     }
 
     public static String getName() {
-        return name;
+        return Name;
     }
 
     public static int getBaseAttack() {
@@ -41,6 +76,17 @@ public class Card {
         return buff;
     }
 
+    public Category getCategory() {
+        return kategorie;
+    }
+
+    // Buff set
+    public void setBuff(Buff buff) {
+        this.buff=buff;
+        //this.baseAttack = baseAttack + buff.getAttackBuff();
+        //this.baseDefense = baseDefense + buff.getDefenseBuff();
+    }
+
     public boolean isAlive(){
         if(health>0)
         {
@@ -49,7 +95,6 @@ public class Card {
         return false;
     }
 
-    //TODO: Sollte buff null sein, geben Sie baseAttack/Defense unverändert zurück. Sollte buff nicht null sein, so wird buff.getAttackBuff()/.getDefenseBuff() auf baseAttack/baseDefense hinzuaddiert. Sollte nach der Addition ein negativer Wert herauskommen, geben Sie 0 zurück.
     public int getAttack(){
         if(buff==null)
         {
@@ -59,6 +104,20 @@ public class Card {
             return baseAttack;
         }
         return baseAttack;
+    }
+
+
+    //getDefense
+    public int getDefense() {
+        if (buff == null) {
+            return baseDefense;
+        }
+        else if (baseDefense + buff.getDefenseBuff()<=0) {
+            return 0;
+        }
+        else {
+            return baseDefense + buff.getDefenseBuff();
+        }
     }
 
     public void toString(String name, int baseAttack, int baseDefense, int health, Buff buff)
