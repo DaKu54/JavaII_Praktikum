@@ -9,6 +9,10 @@ public enum Category {
     private final String title;
     private final String description;
 
+    /**
+     * @param title
+     * @param description
+     */
     private Category(String title, String description)
     {
         this.description = description;

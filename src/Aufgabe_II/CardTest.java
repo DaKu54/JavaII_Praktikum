@@ -33,6 +33,7 @@ public class CardTest {
     new Card(null, 1, 3, Category.ANIMAL, 2);
   }
 
+  @org.junit.Test
   @Test(expectedExceptions = IllegalArgumentException.class)
   public void testConstructorEmptyName(){
     new Card(new String(""), 1, 3, Category.ANIMAL, 2);

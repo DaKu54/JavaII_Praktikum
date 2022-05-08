@@ -2,10 +2,15 @@ package Aufgabe_II;
 
 public class Buff {
 
-    public static String Name;
-    public static int defenseBuff;
-    public static int attackBuff;
+    public String Name;
+    public int defenseBuff;
+    public int attackBuff;
 
+    /**
+     * @param Name
+     * @param defenseBuff
+     * @param attackBuff
+     */
     public Buff(String Name, int defenseBuff, int attackBuff)
     {
         if (Name == null) {
@@ -26,33 +31,47 @@ public class Buff {
         }
     }
 
-    public boolean equals(Buff other) {
-        boolean helper;
-        if (other == null) {
-            helper = false;
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this==obj)
+        {
+            return true;
         }
-        else if (Name.equals(other.Name) && defenseBuff == other.defenseBuff && attackBuff == other.attackBuff) {
-            helper = true;
+        if (obj==null)
+        {
+            return false;
         }
-        else {
-            helper = false;
+        if(getClass()!=obj.getClass())
+        {
+            return false;
         }
+        Buff otherObj = (Buff)obj;
 
-        return (helper);
+        if(Name.equals(otherObj.getName()) && defenseBuff==otherObj.defenseBuff && attackBuff==otherObj.attackBuff)
+        {
+            return true;
+        }
+        return false;
     }
 
 
-
+    /**
+     * @return
+     */
     public String getName()
     {
         return Name;
     }
 
-    public static int getAttackBuff() {
+    /**
+     * @return
+     */
+    public int getAttackBuff() {
         return attackBuff;
     }
 
-    public static int getDefenseBuff() {
+    public int getDefenseBuff() {
         return defenseBuff;
     }
 

@@ -1,13 +1,15 @@
 package Aufgabe_II;
 
+import java.util.Objects;
+
 public class Card {
 
-    public static String Name;
-    public static int baseAttack;
-    public static int baseDefense;
-    public static int health;
-    public static Buff buff;
-    public static Category kategorie;
+    public String Name;
+    public int baseAttack;
+    public int baseDefense;
+    public int health;
+    public Buff buff;
+    public Category kategorie;
 
     /**
      * Konstruktor baut neue Card - inkl. check
@@ -56,28 +58,32 @@ public class Card {
         this.buff=null;
     }
 
-    public static String getName() {
+    public String getName() {
         return Name;
     }
 
-    public static int getBaseAttack() {
+    public int getBaseAttack() {
         return baseAttack;
     }
 
-    public static int getBaseDefense() {
+    public int getBaseDefense() {
         return baseDefense;
     }
 
-    public static int getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public static Buff getBuff() {
+    public Buff getBuff() {
         return buff;
     }
 
     public Category getCategory() {
         return kategorie;
+    }
+
+    public void setHealth(int health) {
+        this.health=health;
     }
 
     // Buff set
@@ -92,7 +98,10 @@ public class Card {
         {
             return true;
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
     public int getAttack(){
@@ -120,23 +129,62 @@ public class Card {
         }
     }
 
+    /**
+     * @param name
+     * @param baseAttack
+     * @param baseDefense
+     * @param health
+     * @param buff
+     */
     public void toString(String name, int baseAttack, int baseDefense, int health, Buff buff)
     {
         System.out.printf("%s (A:%s, D:%s, H:%s)", name, baseAttack, baseDefense, health);
     }
 
-    public void attack(Card otherCard){
-        if(otherCard==null)
-        {
-            throw new IllegalArgumentException("otherCard darf nicht null sein");
-        } else if (this.isAlive()==false || otherCard.isAlive()==false) {
-            throw new IllegalArgumentException("Beide Karten müssen am Leben sein");
+    /**
+     * @param otherCard
+     */
+    //Attack
+    public void attack(Card otherCard) {
+        if (otherCard == null) {
+            throw new IllegalArgumentException("Es müssen zwei Karten angegeben werden!");
+        }
+        else if (this.isAlive() && otherCard.isAlive()) {
+            if (this.getAttack()>otherCard.getDefense()) {
+                if ((otherCard.getDefense()-this.getAttack())+otherCard.getHealth()<=0) {
+                    otherCard.setHealth(0);
+                }
+                else {
+                    otherCard.setHealth((otherCard.getDefense()-this.getAttack())+otherCard.getHealth());
+                }
+            }
+            else if (this.getAttack()==otherCard.getDefense()) {
+                otherCard.health=otherCard.health-1;
+            }
+        }
+        else {
+            throw new IllegalArgumentException("Beide Karten müssen am Leben sein!");
         }
     }
 
-    public boolean equals(Card otherCard)
+    @Override
+    public boolean equals(Object obj)
     {
-        if(this == otherCard)
+        if (this==obj)
+        {
+            return true;
+        }
+        if (obj==null)
+        {
+            return false;
+        }
+        if(getClass()!=obj.getClass())
+        {
+            return false;
+        }
+        Card otherObj = (Card)obj;
+
+        if(Name.equals(otherObj.getName()) && baseDefense==otherObj.baseDefense && health==otherObj.health && baseAttack==otherObj.baseAttack && Objects.equals(buff, otherObj.buff) && kategorie==otherObj.kategorie)
         {
             return true;
         }
