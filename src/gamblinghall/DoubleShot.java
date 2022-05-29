@@ -1,5 +1,7 @@
 package gamblinghall;
 
+import java.util.Random;
+
 public class DoubleShot extends SlotMachine
 {
 	final int stake;
@@ -36,14 +38,30 @@ public class DoubleShot extends SlotMachine
 	{
 		return countJackpot;
 	}
-	
-	public int play(double stake)
-	{
-		return stake2;
-	}
 
 	@Override
 	public void play() {
+		if (this.stake != stake)
+			throw new IllegalArgumentException("Die Einsätze sind nicht gleich!");
+		Random rand = new Random();
+		int winType = rand.nextInt(1001);
+		setJackpot(0.1*stake);
+		setCountGames(1);
+		setRevenue(stake);
+		setProfit(stake);
 
+		if (winType % 2 == 0) {
+			setCountWins(1);
+			setWin(2*stake);
+		}
+
+		if (winType == 22) {
+			setJackpot(1);
+			setWin(this.jackpot + 2*stake);
+			setJackpot(-this.jackpot);
+		}
+
+		setProfit(-this.win);
+		return win;
 	}
 }
