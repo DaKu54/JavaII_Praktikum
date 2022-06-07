@@ -24,10 +24,10 @@ public class ArcadeFunTest {
 	@Test
 	public void test_constructorInvalid() {
 
-		assertThrows("Must throw IllegalArgumentException on null name", IllegalArgumentException.class,
+		assertThrows("Must throw IllegalArgumentException on null Name", IllegalArgumentException.class,
 				() -> new ArcadeFun(null));
 
-		assertThrows("Must throw IllegalArgumentException on empty name", IllegalArgumentException.class,
+		assertThrows("Must throw IllegalArgumentException on empty Name", IllegalArgumentException.class,
 				() -> new ArcadeFun(""));
 
 		assertThrows("Must throw IllegalArgumentException on stake < 1", IllegalArgumentException.class,

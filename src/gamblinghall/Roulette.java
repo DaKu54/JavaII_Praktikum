@@ -6,9 +6,9 @@ public class Roulette extends SlotMachine {
 
 	public int betNumber;
 
-	public Roulette(String name) {
-		super(name);
-		this.name = name;
+	public Roulette(String Name) {
+		super(Name);
+		this.Name = Name;
 	}
 
 	@Override
@@ -121,9 +121,9 @@ public class Roulette extends SlotMachine {
 		return win;
 	}
 
-	public Roulette(String name, RouletteGameType rouletteGameType) {
-		super(name);
-		this.name = name;
+	public Roulette(String Name, RouletteGameType rouletteGameType) {
+		super(Name);
+		this.Name = Name;
 		if(rouletteGameType==null || rouletteGameType==RouletteGameType.NUMBER)
 		{
 			throw new IllegalArgumentException("rouletteGameType darf weder null noch Plein sein");
@@ -134,9 +134,9 @@ public class Roulette extends SlotMachine {
 		}
 	}
 
-	public Roulette(String name, int betNumber) {
-		super(name);
-		this.name = name;
+	public Roulette(String Name, int betNumber) {
+		super(Name);
+		this.Name = Name;
 		this.rouletteGameType = RouletteGameType.NUMBER;
 		if(betNumber<0||betNumber>36)
 		{

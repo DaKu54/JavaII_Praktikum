@@ -27,10 +27,10 @@ public class RouletteTest {
 	@Test
 	public void test_constructorInvalid() {
 
-		assertThrows("Must throw IllegalArgumentException on null name", IllegalArgumentException.class,
+		assertThrows("Must throw IllegalArgumentException on null Name", IllegalArgumentException.class,
 				() -> new Roulette(null));
 
-		assertThrows("Must throw IllegalArgumentException on empty name", IllegalArgumentException.class,
+		assertThrows("Must throw IllegalArgumentException on empty Name", IllegalArgumentException.class,
 				() -> new Roulette(""));
 
 		assertThrows("Must throw IllegalArgumentException on betNumber < 0", IllegalArgumentException.class,

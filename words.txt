@@ -360,7 +360,7 @@ door	NoC	254
 let	Verb	253
 Britain	NoP	251
 3	Num	250
-name	NoC	250
+Name	NoC	250
 person	NoC	250
 services	NoC	249
 months	NoC	248
@@ -1396,7 +1396,7 @@ text	NoC	77
 appears	Verb	77
 separate	Adj	77
 student	NoC	77
-names	NoC	76
+Names	NoC	76
 sell	Verb	76
 holiday	NoC	76
 larger	Adj	76
@@ -2445,7 +2445,7 @@ breakfast	NoC	44
 stayed	Verb	44
 kids	NoC	44
 display	NoC	44
-named	Verb	44
+Named	Verb	44
 bedroom	NoC	44
 sports	NoC	44
 aspect	NoC	43
@@ -4312,7 +4312,7 @@ male	NoC	22
 assault	NoC	22
 marginal	Adj	22
 leave	NoC	22
-namely	Adv	22
+Namely	Adv	22
 J	NoP	22		
 fed	Verb	22
 distinctive	Adj	22
@@ -5367,7 +5367,7 @@ cultures	NoC	16
 seeds	NoC	16
 monopoly	NoC	16
 accessible	Adj	16
-tournament	NoC	16
+tourNament	NoC	16
 moves	NoC	16
 excited	Adj	16
 determined	Adj	16
@@ -6338,7 +6338,7 @@ embarrassed	Adj	13
 specification	NoC	13
 despair	NoC	13
 yep	Int	13
-name	Verb	13
+Name	Verb	13
 serum	NoC	13
 Maxwell	NoP	13
 Dick	NoP	13

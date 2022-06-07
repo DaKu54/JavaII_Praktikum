@@ -4,8 +4,8 @@ public class ArcadeFun extends SlotMachine {
 
 	private int stake;
 
-	public ArcadeFun(String name) {
-		super(name);
+	public ArcadeFun(String Name) {
+		super(Name);
 		this.stake = 1;
 	}
 
@@ -14,8 +14,8 @@ public class ArcadeFun extends SlotMachine {
 
 	}
 
-	public ArcadeFun(String name, int stake) {
-		super(name);
+	public ArcadeFun(String Name, int stake) {
+		super(Name);
 		if(stake==Math.floor(stake) && stake<=10 && stake>=1)
 		{
 			this.stake = 1;

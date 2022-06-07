@@ -4,18 +4,18 @@ import java.util.Objects;
 
 public class Card {
 	
-	private final String name;
+	private final String Name;
 	private final int baseAttack;
 	private final int baseDefense;
 	private Category category;
 	private int health;
 	private Buff buff = null;
 	
-	public Card(String name,  int baseDefense, int baseAttack, Category category, int health) {
-		if (name == null || name.equals(""))
+	public Card(String Name,  int baseDefense, int baseAttack, Category category, int health) {
+		if (Name == null || Name.equals(""))
 			throw new IllegalArgumentException("Name darf nicht leer oder null sein.");
 		else
-			this.name = name;
+			this.Name = Name;
 		
 		if (baseAttack < 0)
 			throw new IllegalArgumentException("Basisangrifsswert muss mindestens 0 sein!");
@@ -38,7 +38,7 @@ public class Card {
 	}
 	
 	public String getName() {
-		return name;
+		return Name;
 	}
 	
 	public int getBaseAttack() {
@@ -89,11 +89,11 @@ public class Card {
 			return false;
 		Card other = (Card) obj;
 		return baseAttack == other.baseAttack && baseDefense == other.baseDefense && Objects.equals(buff, other.buff)
-				&& category == other.category && health == other.health && Objects.equals(name, other.name);
+				&& category == other.category && health == other.health && Objects.equals(Name, other.Name);
 	}
 
 	public String toString() {
-		String ausgabe = "Name: " + name + ", Basisverteidigungswert: " + baseDefense + ", Basisangriffswert: " + baseAttack + ", Kategorie: " + category + ", Health: " + health + ", Buff: " + buff;
+		String ausgabe = "Name: " + Name + ", Basisverteidigungswert: " + baseDefense + ", Basisangriffswert: " + baseAttack + ", Kategorie: " + category + ", Health: " + health + ", Buff: " + buff;
 		return ausgabe;
 	}
 	
@@ -101,7 +101,7 @@ public class Card {
 		if (otherCard == null)
 			throw new IllegalArgumentException("otherCard darf nicht null sein");
 		if (!isAlive())
-			throw new IllegalArgumentException(name + " muss am Leben sein.");
+			throw new IllegalArgumentException(Name + " muss am Leben sein.");
 		if (!otherCard.isAlive())
 			throw new IllegalArgumentException(otherCard.getName() + " muss am Leben sein.");
 		

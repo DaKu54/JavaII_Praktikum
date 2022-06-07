@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public abstract class SlotMachine 
 	{
-		public String name;
+		public String Name;
 		public final double revenue = 0;
 		public double profit = 0;
 		public int countGames = 0;
 		public int countWins = 0;
 		 	
-		public SlotMachine(String name)
+		public SlotMachine(String Name)
 		{
-			if(this.name==null||this.name.isEmpty())
+			if(this.Name==null||this.Name.isEmpty())
 			{
 				throw new IllegalArgumentException("Name darf nicht null oder leer sein.");
 			}
@@ -23,7 +23,7 @@ public abstract class SlotMachine
 
 		public String getName()
 		{
-			return name;
+			return Name;
 		}
 		
 		public double getRevenue()
@@ -46,7 +46,7 @@ public abstract class SlotMachine
 			return countWins;
 		}
 		public void checkValues() {
-			if (name == "" || name == null)
+			if (Name == "" || Name == null)
 			{
 				throw new IllegalArgumentException("Name darf nicht leer oder null sein!");
 			}
@@ -78,7 +78,7 @@ public abstract class SlotMachine
 			return countGames;
 		}
 		
-		public boolean equals(Object DoubleShot,Object ArcadeFun, Object Roulette, String name)
+		public boolean equals(Object DoubleShot,Object ArcadeFun, Object Roulette, String Name)
 		{
 			return true;
 		}
@@ -87,6 +87,6 @@ public abstract class SlotMachine
 
 		public String toString() 
 		{
-			return name;
+			return Name;
 		}
 	}

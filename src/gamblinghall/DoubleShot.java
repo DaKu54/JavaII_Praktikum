@@ -8,19 +8,19 @@ public class DoubleShot extends SlotMachine
 	public double jackpot;
 	public int countJackpot;
 
-	public DoubleShot(String name, int stake)
+	public DoubleShot(String Name, int stake)
 	{
 		super();
-		this.name = name;
+		this.Name = Name;
 
 		if(stake.)
 		this.stake = stake;
 	}
 
-	public DoubleShot(String name, int stake)
+	public DoubleShot(String Name, int stake)
 	{
 		super();
-		this.name = name;
+		this.Name = Name;
 		this.stake = 1;
 	}
 

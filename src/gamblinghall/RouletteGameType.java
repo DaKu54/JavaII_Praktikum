@@ -12,21 +12,21 @@ public enum RouletteGameType {
     M12("Moyenne douzaine", 3),
     D12("Derniere douzaine", 3);
 
-    private final String name;
+    private final String Name;
     private final int auszahlungsfaktor;
 
     /**
-     * @param name
+     * @param Name
      * @param auszahlungsfaktor
      */
-    private RouletteGameType(String name, int auszahlungsfaktor)
+    private RouletteGameType(String Name, int auszahlungsfaktor)
     {
         this.auszahlungsfaktor = auszahlungsfaktor;
-        this.name = name;
+        this.Name = Name;
     }
 
     public String getTitle(){
-        return name;
+        return Name;
     }
 
     public int getAuszahlungsfaktor(){

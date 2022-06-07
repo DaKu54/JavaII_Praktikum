@@ -23,10 +23,10 @@ public class DoubleShotTest {
 	@Test
 	public void test_constructorInvalid() {
 
-		assertThrows("Must throw IllegalArgumentException on null name", IllegalArgumentException.class,
+		assertThrows("Must throw IllegalArgumentException on null Name", IllegalArgumentException.class,
 				() -> new DoubleShot(null, stake));
 
-		assertThrows("Must throw IllegalArgumentException on empty name", IllegalArgumentException.class,
+		assertThrows("Must throw IllegalArgumentException on empty Name", IllegalArgumentException.class,
 				() -> new DoubleShot("", stake));
 
 		assertThrows("Must throw IllegalArgumentException on stake < 1", IllegalArgumentException.class,

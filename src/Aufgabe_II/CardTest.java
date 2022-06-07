@@ -175,7 +175,7 @@ public class CardTest {
     assertTrue("equals must return true on equals objects",
         wolf.equals(new Card("Wolf", 1, 3, Category.ANIMAL, 2)));
 
-    assertFalse("equals must return false on different names",
+    assertFalse("equals must return false on different Names",
         wolf.equals(new Card("Wolf!", 1, 3, Category.ANIMAL, 2)));
 
     assertFalse("equals must return false on different base defenses",
