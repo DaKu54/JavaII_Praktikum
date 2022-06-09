@@ -25,7 +25,8 @@ public class Card {
 
     public String toString()
     {
-        return System.out.println("+++ NAME_AUTO +++ \nHubraum:    " + this.cylinderCapacity + "\nZylinder:    " + this.cylinderCount + "\nPS:     " + String.valueOf(this.horsePower) + "\n0 - 100 km/h: " + this.acceleration);
+        String ausgabe = "+++ NAME_AUTO +++ \nHubraum:    " + this.cylinderCapacity + "\nZylinder:    " + this.cylinderCount + "\nPS:     " + String.valueOf(this.horsePower) + "\n0 - 100 km/h: " + this.acceleration;
+        return ausgabe;
     }
 
     public String getName() {

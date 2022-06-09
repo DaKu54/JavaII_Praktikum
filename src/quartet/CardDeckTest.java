@@ -215,7 +215,7 @@ public class CardDeckTest {
 		assertNotEquals("The cards of both objects are not equal",cd1,cd3);
 	}
 	
-	private CardDeck getFerrariCardDeck() {
+	private CardDeck getFerrariCardDeck() throws CardDeckException {
 		CardDeck cd = new CardDeck();
 		Card card0 = new Card("Ferrari F512 M",4943,12,440,5);
 		Card card1 = new Card("Ferrari 812 Competizione A",6496,12,830,3);
