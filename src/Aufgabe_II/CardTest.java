@@ -1,8 +1,10 @@
 package Aufgabe_II;
 
 import static org.junit.Assert.*;
+
+import Aufgabe_II.Card;
+import Aufgabe_II.Category;
 import org.junit.*;
-import org.testng.annotations.Test;
 
 public class CardTest {
 
@@ -28,33 +30,32 @@ public class CardTest {
 
   }
 
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testConstructorNullName(){
     new Card(null, 1, 3, Category.ANIMAL, 2);
   }
 
-  @org.junit.Test
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testConstructorEmptyName(){
     new Card(new String(""), 1, 3, Category.ANIMAL, 2);
   }
 
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testConstructorNegativeDefense(){
     new Card("Wolf", -1, 3, Category.ANIMAL, 2);
   }
 
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testConstructorNegativeAttack(){
     new Card("Wolf", 1, -3, Category.ANIMAL, 2);
   }
 
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testConstructorNullCategory(){
     new Card("Wolf", 1, 3, null, 2);
   }
 
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testConstructorAlreadyDead(){
     new Card("Wolf", 1, 3, Category.ANIMAL, 0);
   }
@@ -88,7 +89,7 @@ public class CardTest {
     assertEquals("defense must be 0", 0, wolf.getDefense());
   }
 
-  @Test(expectedExceptions = IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testAttackInvalid(){
     wolf.attack(null);
   }
@@ -174,7 +175,7 @@ public class CardTest {
     assertTrue("equals must return true on equals objects",
         wolf.equals(new Card("Wolf", 1, 3, Category.ANIMAL, 2)));
 
-    assertFalse("equals must return false on different names",
+    assertFalse("equals must return false on different Names",
         wolf.equals(new Card("Wolf!", 1, 3, Category.ANIMAL, 2)));
 
     assertFalse("equals must return false on different base defenses",

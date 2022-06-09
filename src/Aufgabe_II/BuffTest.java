@@ -56,7 +56,7 @@ public class BuffTest {
     assertTrue("equals must return true on equals objects",
         b.equals(new Buff("Rage", -2, 4)));
 
-    assertFalse("equals must return false on different names",
+    assertFalse("equals must return false on different Names",
         b.equals(new Buff("Rage!", -2, 4)));
 
     assertFalse("equals must return false on different defense buffs",

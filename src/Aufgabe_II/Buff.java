@@ -75,8 +75,8 @@ public class Buff {
         return defenseBuff;
     }
 
-    public void toString(String name, int defenseBuff, int attackBuff)
+    public void toString(String Name, int defenseBuff, int attackBuff)
     {
-        System.out.printf("%s (D:%s, A:%s)", name, attackBuff, defenseBuff );
+        System.out.printf("%s (D:%s, A:%s)", Name, attackBuff, defenseBuff );
     }
 }
